@@ -1,0 +1,32 @@
+<br><br>
+<table>
+    <thead>
+        <tr>
+            <th>TMDB id serije</th>
+            <th>ID sezone</th>
+            <th>Naslov</th>
+            <th>Broj sezone</th>
+            <th>Broj epizoda u sezoni</th>
+            <th>Opis</th>
+            <th>Poster</th>
+            <th>Ocjena sezone</th>
+        </tr>
+    </thead>
+    <tbody>
+		<tr *ngFor="let sezona of sezone">
+            <td>{{sezona.serija_tmdb_id}}</td>
+            <td>{{sezona.sezona_id}}</td>
+            <td>{{sezona.naziv}}</td>
+            <td>{{sezona.broj_sezone}}</td>
+            <td>{{sezona.broj_epizoda_u_sezoni}}</td>
+            <td>{{sezona.opis}}</td>
+            <td>
+                <img 
+                    src={{dohvatiPosterPutanju()}}{{sezona.slika}}
+                    width='100' 
+                />
+            </td>
+            <td>{{sezona.ocjena_sezone}}</td>
+		</tr>
+    </tbody>
+</table>

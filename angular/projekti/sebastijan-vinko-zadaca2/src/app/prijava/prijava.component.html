@@ -1,0 +1,68 @@
+<br><br>
+<p>Podaci za prijavu:</p>
+<table border="1">
+    <thead>
+        <tr>
+            <th>
+                Korisničko ime
+            </th>
+            <th>
+                Lozinka
+            </th>
+            <th>
+                TOTP kljuc
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                admin
+            </td>
+            <td>
+                rwa
+            </td>
+            <td>
+                AA6630
+            </td>
+        </tr>
+        <tr>
+            <td>
+                obican
+            </td>
+            <td>
+                rwa
+            </td>
+            <td>
+                OBOB48
+            </td>
+        </tr>
+        <tr>
+            <td>
+                mmarkic
+            </td>
+            <td>
+                rwa
+            </td>
+        </tr>
+        <tr>
+            <td>
+                llovric
+            </td>
+            <td>
+                rwa
+            </td>
+        </tr>
+    </tbody>
+</table>
+<form #formaZaPrijavu="ngForm" (ngSubmit)="onSubmit(formaZaPrijavu)">
+    <label for="korime">Korisničko ime</label><br>
+    <input name="korime" type="text" ngModel required><br>
+    <label for="lozinka">Lozinka</label><br>
+    <input name="lozinka" type="text" ngModel required><br>
+    <label for="tajniKljuc">Tajni kljuc</label><br>
+    <input name="tajniKljuc" type="text" ngModel required><br>
+    <button type="submit">Prijavi me</button><br><br>
+    <button (click)="loginWithGitHub()">Prijavi me preko Githuba</button>
+</form>
+<br>

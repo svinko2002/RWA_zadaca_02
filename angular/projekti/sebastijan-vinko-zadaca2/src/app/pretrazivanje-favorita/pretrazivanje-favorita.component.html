@@ -1,0 +1,39 @@
+<h2>Popis favorita</h2>
+<br>
+<div [hidden]="isHidden">
+    <table>
+        <thead>
+            <th>TMDB id</th>
+            <th>Naslov</th>
+            <th>Opis</th>
+            <th>Poster</th>
+            <th>Popularnost</th>
+            <th>Ocjena serije</th>
+            <th>Broj glasova</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let s of serije">
+                <td>{{s.id}}</td>
+                <td>{{s.naziv}}</td>
+                <td>{{s.opis}}</td>
+                <td>
+                    <img
+                        src={{dohvatiPosterPutanju()}}{{s.slika}}
+                        width='100'
+                    >
+                </td>
+                <td>{{s.popularnost}}</td>
+                <td>{{s.ocjena_serije}}</td>
+                <td>{{s.broj_glasova}}</td>
+                <td>
+                    <button [routerLink]="['/detaljiFavorita',s.id]">
+                        Detalji serije
+                    </button>
+                </td>
+                <td>
+                    <button (click)="makniIzFavorita(s.id)">Makni iz favorita</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

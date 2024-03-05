@@ -1,0 +1,44 @@
+<br><br>
+<table>
+    <thead>
+        <th>TMDB id</th>
+        <th>Naslov original</th>
+        <th>Naslov</th>
+        <th>Opis</th>
+        <th>Broj sezona</th>
+        <th>Broj epizoda</th>
+        <th>Jezik</th>
+        <th>Poster</th>
+        <th>Popularnost</th>
+        <th>Ocjena serije</th>
+        <th>Broj glasova</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{s.id}}</td>
+            <td>{{s.originalan_naziv}}</td>
+            <td>{{s.naziv}}</td>
+            <td>{{s.opis}}</td>
+            <td>{{s.broj_sezona}}</td>
+            <td>{{s.broj_epizoda}}</td>
+            <td>{{s.originalan_jezik}}</td>
+            <td>
+                <a href={{s.stranica}}>
+                    <img
+                        src={{dohvatiPosterPutanju()}}{{s.slika}}
+                        width='100'
+                    >
+                </a>
+            </td>
+            <td>{{s.popularnost}}</td>
+            <td>{{s.ocjena_serije}}</td>
+            <td>{{s.broj_glasova}}</td>
+            <td *ngIf="korisnikPrijavljen">
+                <button (click)="dodajUFavorite(s.id)">Dodaj u favorite</button>
+            </td>
+            <td *ngIf="githubKorisnikPrijavljen">
+                <button (click)="dodajULocalStorage(s.id)">Dodaj u favorite (localStorage)</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

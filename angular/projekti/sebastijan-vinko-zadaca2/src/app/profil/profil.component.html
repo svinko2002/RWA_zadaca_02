@@ -1,0 +1,39 @@
+<br><br>
+<form #formaZaProfil="ngForm" (ngSubmit)="onSubmit(formaZaProfil)">
+    <label for="ime">Ime</label><br>
+    <input type="text" name="ime" [value]="imeValue" ngModel required><br>
+
+    <label for="prezime">Prezime</label><br>
+    <input type="text" name="prezime" #prezime [value]="prezimeValue" ngModel required><br>
+
+    <label for="email">Email</label><br>
+    <input type="email" name="email" #email readonly="true" [value]="emailValue" ngModel required><br>
+
+    <label for="godinaRodjenja">Godina rođenja</label><br>
+    <input type="text" name="godina_rodjenja" #godina_rodjenja [value]="godina_rodjenjaValue" ngModel required><br>
+
+    <label for="drzava">Država</label><br>
+    <input type="text" name="drzava" #drzava [value]="drzavaValue" ngModel required><br>
+
+    <label for="zupanija">Županija</label><br>
+    <input type="text" name="zupanija" #zupanija [value]="zupanijaValue" ngModel required><br>
+
+    <label for="korime">Korisničko ime</label><br>
+    <input type="text" name="korime" #korime readonly="true" [value]="korimeValue" ngModel required><br>
+
+    <label for="lozinka">Lozinka</label><br>
+    <input type="password" name="lozinka" #lozinka readonly="true" [value]="lozinkaValue" ngModel required><br><br>
+
+    <label for="citajTajniKljuc">Omogući dvorazinsku autentifikaciju</label><br>
+    <input type="checkbox" id="citajTajniKljuc" name="citajTajniKljuc" [(ngModel)]="citajTajniKljuc" (change)="onCitajTajniKljucChange()">
+    <br><br>
+    <div [hidden]="!prikazi">
+        <label for="tajniKljuc">Tajni ključ</label><br>
+        <input type="text" name="tajniKljuc" #tajniKljuc readonly="true" [value]="tajniKljucValue" ngModel required ><br><br>
+
+        <qrcode [qrdata]="tajniKljucQrCode" [width]="128" [errorCorrectionLevel]="'M'"></qrcode>
+    </div>
+    <button type="submit">Ažuriraj podatke</button>
+</form>
+
+<br><br>

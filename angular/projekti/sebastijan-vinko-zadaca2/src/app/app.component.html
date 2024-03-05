@@ -1,0 +1,20 @@
+<header>
+  <h1>{{title}}</h1>
+  <script src="https://www.google.com/recaptcha/enterprise.js?render=6LcUA0gpAAAAAM0_vVH70ajf88RFaHscn4Q5ARyl"></script>
+</header>
+<nav>
+    <a routerLink="/pocetna" (click)="putanja='pocetna'">Početna </a>
+    <a routerLink="/prijava" (click)="putanja='prijava'" [hidden]="!obican">Prijava </a>
+    <a routerLink="/odjava" (click)="putanja='odjava'" [hidden]="obican">Odjava </a>
+    <a routerLink="/registracija" (click)="putanja='registracija'" [hidden]="admin">Registracija </a>
+    <a routerLink="/dokumentacija" (click)="putanja='dokumentacija'">Dokumentacija </a>
+    <a routerLink="/profil" (click)="putanja='profil'" [hidden]="profil">Profil </a>
+    <a routerLink="/favoriti" (click)="putanja='favoriti'" [hidden]="obican">Favoriti </a>
+    <a routerLink="/korisnici" (click)="putanja='korisnici'" [hidden]="admin">Korisnici </a>
+    <a routerLink="/dnevik" (click)="putanja='dnevik'" [hidden]="admin">Dnevik </a>
+</nav>
+<main>
+  <p *ngIf="prijavljen">Prijavljeni ste kao {{prijavljen.ime}} {{prijavljen.prezime}}</p>
+  <router-outlet></router-outlet>
+</main>
+<footer>Sebastijan Vinko &copy; 2023</footer> 

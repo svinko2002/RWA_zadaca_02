@@ -1,0 +1,33 @@
+<div [hidden]="isHidden">
+    <table>
+        <thead>
+            <tr>
+                <th>ID KORISNIKA</th>
+                <th>ID tipa korisnika</th>
+                <th>Korisničko ime</th>
+                <th>Email</th>
+                <th>Ime</th>
+                <th>Prezime</th>
+                <th>Godina rođenja</th>
+                <th>Država</th>
+                <th>Županija</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let k of korisnici">
+                <td>{{k.id}}</td>
+                <td>{{k.tipovi_korisnika_id}}</td>
+                <td>{{k.korime}}</td>
+                <td>{{k.email}}</td>
+                <td>{{k.ime}}</td>
+                <td>{{k.prezime}}</td>
+                <td>{{k.godina_rodjenja}}</td>
+                <td>{{k.drzava}}</td>
+                <td>{{k.zupanija}}</td>
+                <td>
+                    <button (click)="obrisiKorisnika(k.korime)">Obriši korisnika</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

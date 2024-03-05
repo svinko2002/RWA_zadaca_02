@@ -1,0 +1,28 @@
+<form #formaZaRegistraciju="ngForm" (ngSubmit)="onSubmit(formaZaRegistraciju)">
+
+    <label for="ime">Ime</label><br>
+    <input type="text" name="ime" #ime ngModel required><br>
+
+    <label for="prezime">Prezime</label><br>
+    <input type="text" name="prezime" #prezime ngModel required><br>
+
+    <label for="email">Email</label><br>
+    <input type="email" name="email" #email ngModel required><br>
+
+    <label for="godinaRodjenja">Godina rođenja</label><br>
+    <input type="text" name="godina_rodjenja" #godina_rodjenja ngModel required><br>
+
+    <label for="drzava">Država</label><br>
+    <input type="text" name="drzava" #drzava ngModel required><br>
+
+    <label for="zupanija">Županija</label><br>
+    <input type="text" name="zupanija" #zupanija ngModel required><br>
+
+    <label for="korime">Korisničko ime</label><br>
+    <input type="text" name="korime" #korime ngModel required><br>
+
+    <label for="lozinka">Lozinka</label><br>
+    <input type="password" name="lozinka" #lozinka ngModel required><br><br>
+
+    <button type="submit">Registriraj me</button>
+</form>

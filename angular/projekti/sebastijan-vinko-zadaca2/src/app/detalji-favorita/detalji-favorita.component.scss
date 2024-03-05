@@ -1,0 +1,33 @@
+table{
+    width: 100%;
+}
+thead {
+    th {
+        text-align: center;
+        text-transform: uppercase;
+        padding: 15px;
+        color: salmon;
+        border: 1px solid #000814;
+    }
+}
+tbody {
+    tr{
+        td {
+            color: #aab1b6;
+            padding: 10px;
+            border: 1px solid #000814;
+        }
+    }
+}
+
+tbody td:hover {
+    background-color: #22272e;
+}
+
+tbody tr:hover td:first-child {
+    border-left-color: white;
+}
+
+tbody tr:hover td:last-child {
+    border-right-color: white;
+}

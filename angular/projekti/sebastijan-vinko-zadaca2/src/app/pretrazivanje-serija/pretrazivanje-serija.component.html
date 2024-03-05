@@ -1,0 +1,46 @@
+<h2>Popis serija</h2>
+<label for="trazilica">Pretraži serije: </label>
+<input type="text" [(ngModel)]='filter' (keyup)="filtriraj()" id="trazilica">
+<br><br>
+<button (click)="prva()"><<<</button>
+<button (click)="prethodna()"><</button>
+<button>{{stranica}}/{{zadnjaStranica}}</button>
+<button (click)="sljedeca()">></button>
+<button (click)="zadnja()">>>></button>
+<br><br>
+<table>
+    <thead>
+        <th>TMDB id</th>
+        <th>Naslov original</th>
+        <th>Naslov</th>
+        <th>Opis</th>
+        <th>Jezik</th>
+        <th>Poster</th>
+        <th>Popularnost</th>
+        <th>Ocjena serije</th>
+        <th>Broj glasova</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let s of serije">
+            <td>{{s.id}}</td>
+            <td>{{s.originalan_naziv}}</td>
+            <td>{{s.naziv}}</td>
+            <td>{{s.opis}}</td>
+            <td>{{s.originalan_jezik}}</td>
+            <td>
+                <img
+                    src={{dohvatiPosterPutanju()}}{{s.slika}}
+                    width='100'
+                >
+            </td>
+            <td>{{s.popularnost}}</td>
+            <td>{{s.ocjena_serije}}</td>
+            <td>{{s.broj_glasova}}</td>
+            <td>
+                <button [routerLink]="['/detalji',s.id]">
+                    Detalji serije
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
